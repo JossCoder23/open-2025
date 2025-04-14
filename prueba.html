@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burbujas Aleatorias</title>
+  <style>
+    /* Estilo base del botón */
+    .boton {
+      position: relative;
+      padding: 15px 30px;
+      font-size: 16px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      overflow: hidden; /* Oculta las burbujas fuera del botón */
+      background-color: #3498db; /* Color inicial */
+      animation: cambiarColor 5s infinite; /* Cambio de color */
+    }
+
+    /* Cambio de color */
+    @keyframes cambiarColor {
+      0% {
+        background-color: #3498db; /* Azul inicial */
+      }
+      50% {
+        background-color: #e74c3c; /* Rojo intermedio */
+      }
+      100% {
+        background-color: #2ecc71; /* Verde final */
+      }
+    }
+
+    /* Estilo de burbujas */
+    .burbuja {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: rgba(255, 255, 255, 0.5); /* Burbuja translúcida */
+      border-radius: 50%;
+      animation: movimientoAleatorio 4s infinite ease-in-out; /* Animación de posición aleatoria */
+    }
+
+    /* Animación para mover las burbujas aleatoriamente */
+    @keyframes movimientoAleatorio {
+      0% {
+        top: calc(100% * var(--inicioY));
+        left: calc(100% * var(--inicioX));
+        opacity: 0;
+        transform: scale(0);
+      }
+      25% {
+        opacity: 0.8;
+        transform: scale(1);
+      }
+      50% {
+        top: calc(100% * var(--medioY));
+        left: calc(100% * var(--medioX));
+        transform: scale(1.5);
+      }
+      75% {
+        opacity: 0.6;
+        transform: scale(1.2);
+      }
+      100% {
+        top: calc(100% * var(--finalY));
+        left: calc(100% * var(--finalX));
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="boton">
+    Botón Animado
+    <!-- Burbuja con variables aleatorias -->
+    <div class="burbuja" style="--inicioX: 0.1; --inicioY: 0.8; --medioX: 0.5; --medioY: 0.3; --finalX: 0.9; --finalY: 0.1;"></div>
+    <div class="burbuja" style="--inicioX: 0.7; --inicioY: 0.9; --medioX: 0.2; --medioY: 0.4; --finalX: 0.6; --finalY: 0.2;"></div>
+    <div class="burbuja" style="--inicioX: 0.4; --inicioY: 0.6; --medioX: 0.8; --medioY: 0.5; --finalX: 0.3; --finalY: 0.7;"></div>
+  </button>
+</body>
+</html>

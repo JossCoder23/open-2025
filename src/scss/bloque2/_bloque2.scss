@@ -1,0 +1,65 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.bloque2 {
+    display: none;
+    overflow: hidden;
+    height: auto;
+    @include m.desktop_1020 {
+        display: block;
+    }
+}
+
+.bloque2Banner {
+    background-color: v.$color1;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 2rem 0;
+    @include m.desktop_1700 {
+        padding: 4rem 0;
+    }
+}
+
+.texto {
+    .textoContent  {
+        display: flex;
+        column-gap: 1rem;
+    }
+    display: inline-block;
+    position: relative;
+    display: flex;
+    column-gap: 5rem;
+    left: -20%;
+    transform: translateX(-50%);
+    animation: desplazar2 15s linear infinite;
+    margin-right: 3rem;
+    img {
+        width: 1.5rem;
+        height: auto;
+        @include m.desktop_1700 {
+            width: 2rem;
+        }
+    }
+    h3 {
+        // height: 5rem;
+        font-weight: 700;
+        color: black;
+        font-size: 1.7rem;
+        margin: 0;
+        position: relative;
+        @include m.desktop_1700 {
+            font-size: 2rem;
+        }
+    }
+}
+
+@keyframes desplazar2 {
+    from {
+        transform: translateX(-50%) translateX(100%);
+    }
+    to {
+        transform: translateX(-50%) translateX(-100%);
+    }
+}
