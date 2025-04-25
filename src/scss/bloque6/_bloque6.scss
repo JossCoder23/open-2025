@@ -1,0 +1,119 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.bloque6 {
+    perspective: 1000px;
+    background-color: rgba(0,0,0, .6);
+}
+
+.card {
+    width: 100%;
+    height: 45rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    @include m.phone_360 {
+        height: 50rem;
+    }
+    @include m.phone_390 {
+        height: 52rem;
+    }
+  }
+
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    button {
+        width: 16rem;
+        height: 3.5rem;
+        position: absolute;
+        bottom: 3rem;
+        font-size: 1.8rem;
+        right: 2rem;
+        background-color: v.$color1;
+        border: none;
+        border-radius: 2rem;
+        font-weight: 600;
+        color: black;
+    }
+  }
+
+  .card-front {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block4-slide1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card-back {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/23-04-25/open-cayetano-block6-back-image1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    row-gap: .8rem;
+    h3 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 500;
+        width: 16rem;
+        text-align: center;
+        color: black;
+    }
+    button {
+        background-color: black;
+        color: white;
+    }
+  }
+  
+  .card-back {
+    // background: lightcoral;
+    transform: rotateY(180deg);
+  }
+  
+  .flipped {
+    transform: rotateY(180deg);
+  }
+
+.card-front2 {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block4-slide2.webp);
+}
+
+.card-back2 {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/23-04-25/open-cayetano-block6-back-image3.webp);
+}
+
+.card-front3 {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block4-slide3.webp);
+}
+
+.card-back3 {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/23-04-25/open-cayetano-block6-back-image2.webp);
+}
+
+.card-front4 {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block4-slide4.webp);
+}
+
+.card-back4 {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/23-04-25/open-cayetano-block6-back-image4.webp);
+    row-gap: .5rem;
+    h3 {
+        width: 27rem;
+        font-size: 1.7rem;
+    }
+}
+
+.card-front5 {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block4-slide5.webp);
+}
+
+.card-back5 {
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/23-04-25/open-cayetano-block6-back-image5.webp);
+}

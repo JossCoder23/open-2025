@@ -29,31 +29,92 @@ html(lang="es")
                             img.bloque1BackgroundTextContentDesktop(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/09-04-25/open-cayetano-background-desktop-imageTop.webp", alt="")
                             .bloque1BackgroundTextContentGrid
                                 h3 Sábado 14 de junio
+                                h3.bloque1TextDesktop |
                                 h3 Campus SMP
-                .bloque1FormContent
-                    .bloque1Form
+                .bloque1FormContent.crmWebToEntityForm(id="crmWebToEntityForm")
+                    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+                    meta(http-equiv='content-type' content='text/html;charset=UTF-8')
+                    form.bloque1Form(id="webform6093725000001039004" action="https://crmsandbox.zoho.com/crm/WebToLeadForm" name="WebToLeads3503766000678594001" method="POST" onSubmit='javascript:document.charset="UTF-8"' accept-charset="UTF-8")
+                        style.
+                            .oculto {
+                                display:none;
+                            }
+                        input(type='text' style='display: none' name='xnQsjsdp' value='dca2765a5d03016cc1ad249409ff360c153a5fb0aaecfb26c1b12a317d835ec6')
+                        input#zc_gad(type='hidden' name='zc_gad' value='')
+                        input(type='text' style='display: none' name='xmIwtLD' value='3b29c2ff618317f97dd6fe14c66f4b58b836008d814bab6189b926723e3d6c43e37730ae448c9ec137dd562bea4e913d')
+                        input(type='text' style='display: none' name='actionType' value='TGVhZHM=')
+                        input(type='text' style='display:none;' name='returnURL' value='https://lp.cayetano.edu.pe/visitas-guiadas-gracias')
                         .bloque1FormTitle
                             h3 <strong>Déjanos tus datos</strong><br /> y nos contactaremos contigo
                         .bloque1FormDouble
-                            input(type="text" placeholder="Nombres*")
-                            input(type="text" placeholder="Apellido Paterno*")
+                            input(type="text" class="requerido" id="First_Name" name="First Name" placeholder="Primer Nombre*" maxlength="40" required)
+                            input(type="text" class="requerido" id="Last_Name" name="Last Name" placeholder="Apellido Paterno*" maxlength="40" required)
                         .bloque1FormDouble
-                            input(type="text" placeholder="Apellido Materno*")
-                            input(type="text" placeholder="Celular*")
+                            input(type="number" inputmode="numeric" id="LEADCF21" name="LEADCF21" class="requerido inputNumber" placeholder="Nro. de DNI*" required)
+                            input(type="text" class="requerido" id="Mobile" name="Mobile" maxlength="9" pattern="9[0-9]{8}" placeholder="Celular*" required)
                         .bloque1FormDouble
-                            input(type="text" placeholder="Tipo Documento*")
-                            input(type="text" placeholder="Nro. Documento*")
-                        input(type="text" placeholder="Correo*")
-                        //- .bloque1FormDouble
-                        input.inputNumber(type="number" placeholder="- Seleccionar Carrera -" inputmode="numeric")
-                        input(type="text" placeholder="- ¿En qué año estás del colegio? -")
-                        .bloque1FormContainerTerminos 
-                            .bloque1TopFormContainer--terminos
-                                input.asistencia(type="checkbox", name="")
-                                h3 Deseo asistir al evento virtual de este 24 de Noviembre.
-                            .bloque1TopFormContainer--terminos
-                                input(type="checkbox", name="")
-                                h3 Política de privacidad y términos de servicio.
+                            input(type="text" class="requerido" id="Email" name="Email" maxlength="100" ftype="email" placeholder="Correo*" required)
+                            select(type="text" class="requerido" id="LEADCF14" name="LEADCF14" required)
+                                option(value="" disabled="" selected="") ¿Grado?
+                                option(value="5to de secundaria") 5to. de secundaria
+                                option(value="4to de secundaria") 4to. de secundaria
+                                option(value="3ro de secundaria") 3ro. de secundaria
+                                option(value="Ya termine el colegio") Ya terminé el colegio
+                        .divColegio
+                            input(type="text" placeholder="Colegio*" id="colegio" name="Colegio" required)
+                            .sugerencia#sugerencia
+                        select(type="text" class="requerido" id="LEADCF220" name="LEADCF302")
+                            option(value="" disabled="" selected="") - Seleccionar carrera -
+                            option(value='ADMINISTRACION') Administraci&oacute;n
+                            option(value='ADMINISTRACION EN SALUD') Administraci&oacute;n en Salud
+                            option(value='BIOLOGIA') Biolog&iacute;a
+                            option(value='EDUCACIÓN CON MENCIÓN PRIMARIA - PRESENCIAL') Educaci&oacute;n
+                            option(value='ENFERMERIA') Enfermer&iacute;a
+                            option(value='ESTOMATOLOGIA') Estomatolog&iacute;a
+                            option(value='FARMACIA Y BIOQUIMICA') Farmacia y Bioquimica
+                            option(value='INGENIERIA AMBIENTAL') Ingenier&iacute;a Ambiental
+                            option(value='INGENIERIA BIOMEDICA') Ingenier&iacute;a Biom&eacute;dica
+                            option(value='INGENIERÍA INDUSTRIAL') Ingenier&iacute;a Industrial
+                            option(value='INGENIERÍA INFORMÁTICA') Ingenier&iacute;a Inform&aacute;tica
+                            option(value='LABORATORIO CLINICO') Laboratorio Cl&iacute;nico y Anatom&iacute;a Patol&oacute;gica
+                            option(value='MEDICINA') Medicina
+                            option(value='MEDICINA VETERINARIA Y ZOOTECNIA') Medicina Veterinaria y Zootecnia
+                            option(value='NUTRICION') Nutrici&oacute;n
+                            option(value='PSICOLOGIA') Psicolog&iacute;a
+                            option(value='RADIOLOGIA') Radiolog&iacute;a
+                            option(value='TERAPIA FISICA Y REHABILITACION') Terapia F&iacute;sica y Rehabilitaci&oacute;n
+                            option(value='TERAPIA OCUPACIONAL') Terapia Ocupacional
+                            option(value='TERAPIA DE AUDICION, VOZ Y LENGUAJE') Terapia de Lenguaje
+                        select(type="text" class="requerido" id="LEADCF31" name="LEADCF31" required)
+                            option(value="" disabled="" selected="") - Horario de Taller -
+                        .bloque1TopFormContainer--terminos
+                            input(type="checkbox", name="", id="checkAcompanante")
+                            h3 ¿Irás con acompañante?
+                        .bloque1FormDouble#bloque1HiddenAcompanante
+                            input(class="requerido" id="LEADCF211" name="LEADCF211" type="number" inputmode="numeric" maxlength="40" placeholder="Número de DNI*")
+                            input(class="requerido" id="LEADCF210" name="LEADCF210" type="text" maxlength="40" placeholder="Celular*")
+                        .oculto
+                            input#utm_source.UTM(name='LEADCF183' value='')
+                            input#utm_medium.UTM(name='LEADCF189' value='')
+                            input#utm_campaign.UTM(name='LEADCF24' value='')
+                            input#utm_id.UTM(name='LEADCF203' value='')
+                            input#utm_term.UTM(name='LEADCF184' value='')
+                            input#utm_content.UTM(name='LEADCF182' value='')
+                            input#reference(name='LEADCF168' value='')
+                            input#LEADCF185(name='LEADCF185' value='PREGRADO')
+                            input(name='Lead Status' value='Sin gestión')
+                            input(name='LEADCF1' value='Automáticos')
+                            input(name='LEADCF198' value='Postulante')
+                            input(name='Lead Source' value='Landing Page')
+                            input#LEADCF10(name='LEADCF10' value='2025-2')
+                            input#LEADCF7(name='LEADCF7' value='Pregrado OPG')
+                        //- .bloque1FormContainerTerminos 
+                            //- .bloque1TopFormContainer--terminos
+                            //-     input.asistencia(type="checkbox", name="")
+                            //-     h3 Deseo asistir al evento virtual de este 24 de Noviembre.
+                        .bloque1TopFormContainer--terminos
+                            input(type="checkbox", name="")
+                            h3 Política de privacidad y términos de servicio.
                         .captcha
                             #recap3503766000237491098.g-recaptcha(data-sitekey='6LdqkDoiAAAAALdLtgIzFUQelkS9jGZU4W7gjLHG' data-theme='light' data-callback='rccallback3503766000237491098' captcha-verified='false')
                             #recapErr3503766000237491098(style='font-size:12px;color:red;visibility:hidden;') Error en validación de Captcha. Si no es un robot, inténtelo de nuevo.
@@ -61,38 +122,176 @@ html(lang="es")
                             button
                                 h3 Enviar
                         script.
+                            function getUTMParams() {
+                                var params = {};
+                                var queryString = window.location.search;
+                                queryString = queryString.substr(1);
+                                var pairs = queryString.split("&");
+                                for (var i = 0; i < pairs.length; i++) {
+                                    var pair = pairs[i].split("=");
+                                    params[pair[0]] = pair[1];
+                                }
+                                return params;
+                            }
+
+                            var utmParams = getUTMParams();
+                            var utmSource = utmParams["utm_source"];
+                            var utmMedium = utmParams["utm_medium"];
+                            var utmCampaign = utmParams["utm_campaign"];
+                            var utmTerm = utmParams["utm_term"];
+                            var utmContent = utmParams["utm_content"];
+                            var utmId = utmParams["utm_id"];
+
+                            let source = document.getElementById('utm_source');
+                            let medium = document.getElementById('utm_medium');
+                            let campaign = document.getElementById('utm_campaign');
+                            let term = document.getElementById('utm_term');
+                            let content = document.getElementById('utm_content');
+                            let utm_id_crm = document.getElementById('utm_id');
+
+                            if (utmSource) {
+                                source.value = utmSource;
+                            } else {
+                                source.value = "landing";
+                            }
+                            if (utmId) {
+                                utm_id_crm.value = utmId;
+                            } else {
+                                utm_id_crm.value = "digital";
+                            }
+                            if (utmMedium) {
+                                medium.value = utmMedium;
+                            } else {
+                                medium.value = "organic";
+                            }
+                            if (utmCampaign) {
+                                campaign.value = utmCampaign;
+                            } else {
+                                campaign.value = "visitas-guiadas";
+                            }
+                            if (utmTerm) {
+                                term.value = utmTerm;
+                            } else {
+                                term.value = "generico";
+                            }
+                            if (utmContent) {
+                                content.value = utmContent;
+                            } else {
+                                content.value = "generico";
+                            }
+                        script(src='https://upch.sis-service-tivenos.com/formulario_global/formulario_general_min.js')
+                        script#wf_anal(src='https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=0437d1c573ea9551a6f78fecc75ed055b133d8637c177b8a930789ad34d2a8bfef7546cab2b29a294f78be18933a2358gid144c28dbf479caf4a652b4f2dd53fb61d7dd73ce678f540722674f734ca738b3gidf7258617d9ad292e18817da2738bf8d68d0f8283158afb13ff49649786a97d5egidc810aa67d5387b528f6ea9ce8821a5817278f4c9c284b8c15ca440a2904cd61e&tw=dd956dad13176aee758bad58a08496c10165e0e8527fe8a62da2a32461edd34c')
+                        iframe(name='captchaFrame' style='display:none;')
         .bloque2
-            .bloque2Banner
-                .texto
-                    .textoContent 
-                        img.shield__image(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-banner.webp", alt="")
-                        h3 Examen para egresados de secundaria
-                    .textoContent
-                        img.shield__image(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-banner.webp", alt="")
-                        h3 Examen para egresados de secundaria
-                    .textoContent
-                        img.shield__image(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-banner.webp", alt="")
-                        h3 Examen para egresados de secundaria
-                    .textoContent
-                        img.shield__image(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-banner.webp", alt="")
-                        h3 Examen para egresados de secundaria
-                    .textoContent
-                        img.shield__image(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-banner.webp", alt="")
-                        h3 Examen para egresados de secundaria
-                    .textoContent
-                        img.shield__image(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-banner.webp", alt="")
-                        h3 Examen para egresados de secundaria
-                    .textoContent
-                        img.shield__image(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-banner.webp", alt="")
-                        h3 Examen para egresados de secundaria
-                    .textoContent
-                        img.shield__image(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-banner.webp", alt="")
-                        h3 Examen para egresados de secundaria
-                    .textoContent
-                        img.shield__image(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-banner.webp", alt="")
-                        h3 Examen para egresados de secundaria
-        .bloque3 
+            .bloque2Container
+                img.bloque2ContainerImage--mobile(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block2-title.webp", alt="")
+                img.bloque2ContainerImage--desktop(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-desktop-block2-title.webp", alt="")
+                .bloque2Subtitle
+                    h4 Ven a la 
+                        strong feria vocacional 
+                        | más completa
+                button
+                    h5 ¡Ven al Open Cayetano!
+        .bloque3
+            img.bloque3Image--mobile(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/23-04-25/open-cayetano-actividades.gif", alt="")
+            .bloque3Container
+                .bloque3Item Talleres vivenciales
+                    .imagen-hover.imagen-ciencias-hover
+                .bloque3Item Stands de nuestras carreras
+                    .imagen-hover.imagen-gestion-hover
+                .bloque3Item Charla para padres
+                    .imagen-hover.imagen-salud-hover
+                .bloque3Item Música, animación y glambooth
+                    .imagen-hover.imagen-ingenieria-hover
+                .bloque3Item Zona de fotos y comidas
+                    .imagen-hover.imagen-educacion-hover
         .bloque4
+            //- img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block3-background.webp", alt="")
+            .bloque4Container 
+                .bloque4Title
+                    img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block4-title.webp", alt="")
+                .bloque4Subtitle
+                    h4 Pasa una tarde diferente junto a tus papás o tus besties mientras conoces más sobre Cayetano y la carrera que te interesa.
+                .bloque4Grid
+                    .bloque4GridItem
+                        img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-icon2.webp", alt="")
+                        h3 Campus San Martín
+                            br
+                            | de Porres
+                            br
+                            span Av. Honorio Delgado 430
+                    .bloque4GridItem
+                        img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-icon1.webp", alt="")
+                        h3 desde la 1:00 p. m.
+        .bloque5
+            .bloque5Container
+                .bloque5Title
+                    img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block5-title.webp", alt="")
+                .bloque5Subtitle
+                    h3 Cayetano es mucho más de lo que imaginas ¿Pensabas que solo era salud? También es 
+                        strong gestión, ingeniería, ciencias y educación.  
+        .bloque6
+            .card
+                .card-front
+                    button(onclick="flipCard()") + Ver carreras
+                .card-back
+                    h3 Administración
+                    h3 Administración en Salud
+                    button(onclick="flipCard()") Regresar
+            .card.card2
+                .card-front.card-front2
+                    button(onclick="flipCard2()") + Ver carreras
+                .card-back.card-back2
+                    h3 Ing. Industrial
+                    h3 Ing. Ambinetal
+                    h3 Ing. Informática
+                    h3 Ing. Biomédica
+                    button(onclick="flipCard2()") Regresar
+            .card.card3
+                .card-front.card-front3
+                    button(onclick="flipCard3()") + Ver carreras
+                .card-back.card-back3
+                    h3 Biología
+                    h3 Nutrición
+                    h3 Farmacia y Bioquímica
+                    button(onclick="flipCard3()") Regresar
+            .card.card4
+                .card-front.card-front4
+                    button(onclick="flipCard4()") + Ver carreras
+                .card-back.card-back4
+                    h3 Medicina
+                    h3 Enfermería
+                    h3 Estomatología
+                    h3 Psicología
+                    h3 Medicina Veterinaria y Zootecnia
+                    h3 Terapia Física y Rehabilitación
+                    h3 Radiología
+                    h3 Laboratorio Clínico y Anatomía Patológica
+                    h3 Terpia Ocupacional
+                    h3 Terapia de Lenguaje
+                    button(onclick="flipCard4()") Regresar
+            .card.card5
+                .card-front.card-front5
+                    button(onclick="flipCard5()") + Ver carreras
+                .card-back.card-back5
+                    h3 Educación
+                    button(onclick="flipCard5()") Regresar
+            script.
+                function flipCard() {
+                    document.querySelector(".card").classList.toggle("flipped");
+                }
+                function flipCard2() {
+                    document.querySelector(".card2").classList.toggle("flipped");
+                }
+                function flipCard3() {
+                    document.querySelector(".card3").classList.toggle("flipped");
+                }
+                function flipCard4() {
+                    document.querySelector(".card4").classList.toggle("flipped");
+                }
+                function flipCard5() {
+                    document.querySelector(".card5").classList.toggle("flipped");
+                }
         footer
             .footerContainer
                 img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-logo%20%281%29.webp", alt="")
@@ -101,6 +300,7 @@ html(lang="es")
                     | Av. Honorio Delgado 430
                     br
                     | Urb. Ingeniería, San Martín de Porres
-        script(src="./js/script.js" defer)
+        script(src="./js/script.js" async)
+        script(src="./js/colegios.js" async)
         //- script(src="./js/swiper.js" defer)
         script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer)

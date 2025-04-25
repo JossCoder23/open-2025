@@ -1,5 +1,120 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
 .bloque3 {
-  min-height: 50rem;
-  background-color: white;
+  height: auto;
   width: 100%;
+  background-color: v.$educacion;
+  @include m.desktop_1020 {
+    background-color: white;
+  }
+  .bloque3Image--mobile {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    @include m.desktop_1020 {
+      display: none;
+    }
+  }
+}
+
+.bloque3Container {
+  display: none;
+
+  @include m.desktop_1020 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.bloque3Item {
+  min-height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 400;
+  overflow: hidden;
+  position: relative;
+  
+  @include m.desktop_1200 {
+    &:hover {
+      min-height: 15rem;
+    }
+    font-size: 3.5rem;
+  }
+  @include m.desktop_1400 {
+    &:hover {
+      min-height: 18rem;
+    }
+    font-size: 4rem;
+  }
+  @include m.desktop_1700 {
+    min-height: 12rem;
+    &:hover {
+      min-height: 22rem;
+    }
+  }
+  .imagen-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  &:nth-child(1) {
+    background-color: v.$ciencias;
+    &:hover .imagen-ciencias-hover {
+      opacity: 1;
+    }
+  }
+  &:nth-child(2) {
+    background-color: v.$gestion;
+    color: white;
+    &:hover .imagen-gestion-hover {
+      opacity: 1;
+    }
+  }
+  &:nth-child(3) {
+    background-color: v.$salud;
+    &:hover .imagen-salud-hover {
+      opacity: 1;
+    }
+  }
+  &:nth-child(4) {
+    background-color: v.$ingenieria;
+    &:hover .imagen-ingenieria-hover {
+      opacity: 1;
+    }
+  }
+  &:nth-child(5) {
+    background-color: v.$educacion;
+    &:hover .imagen-educacion-hover {
+      opacity: 1;
+    }
+  }
+}
+
+.imagen-ciencias-hover {
+  background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-desktop-slide-1.webp');
+}
+
+.imagen-gestion-hover {
+  background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-desktop-slide-2.webp');
+}
+
+.imagen-salud-hover {
+  background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-desktop-slide-3.webp');
+}
+
+.imagen-ingenieria-hover {
+  background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-desktop-slide-4.webp');
+}
+
+.imagen-educacion-hover {
+  background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-desktop-slide-5.webp');
 }

@@ -2,17 +2,26 @@
 @use 'base/mixins' as m;
 
 .bloque1 {
+    position: relative;
     overflow: hidden;
-    background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/09-04-25/open-cayetano-background-mobile.webp');
-    background-size: cover;
-    background-position: top center;
-    background-repeat: none;
-    background-attachment: fixed; //- ACA ES SCROLL SI ACCEDE A TODO O FIXED PARA QUE HAGA EFECTO PARALLAX
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    min-height: 100vh;
+    &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/09-04-25/open-cayetano-background-mobile.webp');
+        background-size: cover !important;
+        background-position: top center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
     @include m.desktop_1020 {
-        background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/09-04-25/open-cayetano-background-desktop.webp');
+        &::before {
+            background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/09-04-25/open-cayetano-background-desktop.webp');
+        }
         display: flex;
         justify-content: center;
         align-items: center;
@@ -30,15 +39,15 @@
         padding: 2rem 0;
     }
     @include m.desktop_1200 {
-        padding: 4rem 0;
+        // padding: 4rem 0;
         width: 90rem;
     }
     @include m.desktop_1400 {
         width: 97rem;
-        padding: 6rem 0;
+        // padding: 2rem 0;
     }
     @include m.desktop_1500 {
-        padding: 8rem 0;
+        padding: 3rem 0;
         width: 98rem;
     }
     @include m.desktop_1700 {
@@ -47,43 +56,37 @@
     }
     @include m.desktop_1900 {
         width: 123rem;
-        padding: 10rem 0;
+        padding: 5rem 0;
     }
 }
 
 .bloque1Background {
-    // background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/general-mobile-imagetop.webp');
-    // background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/19-03-25/21-03-25/general-mobile-top-background.webp');
-    // background-size: cover;
-    // background-position: left center;
-    // background-repeat: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
     height: auto;
-    // width: 20rem;
-    // padding: 2rem 2rem;
     row-gap: 1rem;
     @include m.phone_360 {
-        // padding: 5rem 3rem;
-        // padding: 6rem 0;
         row-gap: 3rem;
     }
     @include m.desktop_1020 {
         background: none;
         padding: 0;
         height: auto;
-        // padding-top: 3rem;
     }
     @include m.desktop_1200 {
-        // padding-top: 7rem;
         row-gap: 5rem;
     }
-    @include m.desktop_1800 {
-        // padding-top: 12rem;
+    @include m.desktop_1300 {
+        padding: 1rem 0;
     }
-   
+    @include m.desktop_1500 {
+        padding: 0;
+    }
+    @include m.desktop_1800 {
+        width: 40rem;
+    }
 }
 
 .bloque1BackgroundText {
@@ -93,6 +96,27 @@
     width: 26rem;
     // background-color: green;
     height: 100%;
+    @include m.phone_375 {
+        width: 28rem;
+    }
+    @include m.phone_420 {
+        width: 33rem;
+    }
+    @include m.desktop_1020 {
+        padding-top: 4rem;
+        justify-content: center;
+    }
+    @include m.desktop_1200 {
+        padding-top: 5rem;
+        justify-content: center;
+        position: relative;
+    }
+    @include m.desktop_1300 {
+        padding-top: 7rem;
+    }
+    @include m.desktop_1800 {
+        width: 40rem;
+    }
     .bloque1BackgroundTextImage {
         
         width: 13rem;
@@ -102,18 +126,24 @@
             width: 15rem;
         }
         @include m.phone_420 {
-            width: 18rem;
+            width: 17rem;
         }
         @include m.desktop_1020 {
             width: 15rem;
             margin-left: 2rem;
+            position: absolute;
+            top: 2rem;
         }
-    }
-    @include m.phone_375 {
-        width: 32rem;
-    }
-    @include m.phone_420 {
-        width: 37rem;
+        @include m.desktop_1200 {
+            top: 0;
+        }
+        @include m.desktop_1300 {
+            width: 17rem;
+            margin-left: 0;
+        }
+        @include m.desktop_1900 {
+            width: 20rem;
+        }
     }
     .bloque1BackgroundTextContent {
         display: flex;
@@ -123,6 +153,12 @@
         justify-content: center;
         align-items: center;
         // height: 75%;
+        @include m.desktop_1200 {
+            row-gap: 1rem;
+        }
+        @include m.desktop_1800 {
+            width: 40rem;
+        }
         .bloque1BackgroundTextContentMobile {
             width: 100%;
             height: auto;
@@ -134,8 +170,17 @@
             display: none;
             @include m.desktop_1020 {
                 display: block;
-                width: 24rem;
+                width: 26rem;
                 height: auto;
+            }
+            @include m.desktop_1200 {
+                width: 100%;
+            }
+            @include m.desktop_1300 {
+                width: calc(100% - 2rem);
+            }
+            @include m.desktop_1800 {
+                width: 100%;    
             }
         }
         .bloque1BackgroundTextContentGrid {
@@ -143,41 +188,50 @@
             flex-direction: column;
             text-align: center;
             row-gap: .5rem;
+            background-color: black;
+            width: 26rem;
             @include m.desktop_1020 {
                 flex-direction: row;
                 justify-content: center;
                 column-gap: 2rem;
+                padding: 0 .3rem;
+                width: 40rem;
+            }
+            @include m.desktop_1200 {
+                width: 44rem;
+            }
+            @include m.desktop_1500 {
+                width: 51rem;
+            }
+            @include m.desktop_1800 {
+                width: 68rem;
             }
             h3 {
-                font-weight: 900;
+                font-weight: 800;
                 font-size: 2.8rem;
                 margin: 0;
                 color: white;
-                -webkit-text-stroke: 1.5px black;
-                -webkit-text-stroke-width: 2px;
+                // -webkit-text-stroke: 1.5px black;
+                // -webkit-text-stroke-width: 2px;
                 letter-spacing: -1.5px;
                 @include m.desktop_1020 {
                     // background-color: purple;
-                    font-size: 2.35rem;
+                    font-size: 2rem;
+                    letter-spacing: -1px;
+                }
+                @include m.desktop_1200 {
+                    letter-spacing: -1.5px;
+                    font-size: 2.5rem;
+                }
+                @include m.desktop_1500 {
+                    font-size: 3rem;
+                }
+                @include m.desktop_1800 {
+                    font-size: 4rem;
+                    -webkit-text-stroke: 2px black;
                 }
             }
         }
-        // }
-        // @include m.phone_360 {
-        //     height: 79%;
-        // }
-        // @include m.phone_400 {
-        //     height: 76%;
-        // }
-        // @include m.desktop_1020 {
-        //     height: 80%;
-        // }
-        // @include m.desktop_1200 {
-        //     height: 83%;
-        // }
-        // @include m.desktop_1800 {
-        //     height: 86%;
-        // }
         .bloque1TextContent__top {
             margin: 0;
             font-weight: 550;
@@ -247,17 +301,13 @@
 }
 
 .bloque1FormContent {
-    // background-color: v.$cuarto;
     height: auto;
     display: flex;
     align-items: flex-end;
-    // padding-top: 7rem;
-    padding: 6rem 0;
+    padding: 3rem 0;
+    padding-bottom: 6rem;
     justify-content: center;
     position: relative;
-    // @include m.tablet_768 {
-    //     padding: 4rem 8rem;
-    // }
     @include m.desktop_1020 {
         padding: 0;
         background-color: transparent;
@@ -277,37 +327,38 @@
 }
 
 .bloque1Form {
-    // background-color: white;
+    background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/24-04-25/open-cayetano-formulario.webp');
     width: 26rem;
-    border-radius: 1.5rem;
-    padding: 3rem;
+    // border-radius: 1.5rem;
+    padding: 5rem 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: .5rem;
     z-index: 1;
-    background-color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // background-color: white;
     // padding: 3rem;
     @include m.phone_375 {
-        width: 32rem;
+        width: 29rem;
     }
     @include m.phone_420 {
-        width: 37rem;
+        width: 34rem;
     }
     @include m.desktop_1020 {
         width: 33rem;
-        background-color: white;
-        padding: 2.5rem;
+        padding: 3.5rem;
+        row-gap: 1rem;
     }
     @include m.desktop_1200 {
         padding: 4.5rem;
-        width: 38rem;
-    }
-    @include m.desktop_1400 {
-        width: 36rem;
+        width: 34rem;
     }
     @include m.desktop_1500 {
-        width: 38rem;    
+        width: 36rem;    
+        padding: 5rem;
     }
     input[type="number"]::-webkit-inner-spin-button, 
     input[type="number"]::-webkit-outer-spin-button {
@@ -369,7 +420,11 @@
             font-size: 1.9rem;
         }
         @include m.desktop_1020 {
+            font-size: 1.5rem;
             margin-bottom: 0;
+        }
+        @include m.desktop_1400 {
+            font-size: 1.7rem;
         }
         span {
             font-weight: 800;
@@ -534,4 +589,42 @@ from {
 to {
     transform: translateX(-50%) translateX(-100%);
 }
+}
+
+.bloque1TextDesktop {
+    display: none;
+    @include m.desktop_1020 {
+        display: block;
+    }
+}
+
+#bloque1HiddenAcompanante {
+    display: none;
+}
+
+#checkAcompanante {
+    width: 1rem;
+}
+
+.divColegio {
+    width: 100%;
+    position: relative;
+}
+
+#sugerencia {
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 5px;
+    display: none;
+    position: absolute;
+    top: 3rem;
+    width: 100%;
+    z-index: 999;
+}
+
+.sugerencia {
+    padding: 5px 3px;
+    background-color: white;
+    cursor: pointer;
 }

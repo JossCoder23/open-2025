@@ -1,0 +1,31 @@
+.bloque5 {
+    background-color: white;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 6rem 0;
+}
+
+.bloque5Container {
+    width: 26rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.bloque5Title {
+    display: flex;
+    justify-content: center;
+    img {
+        width: 24rem;
+    }
+}
+
+.bloque5Subtitle {
+    h3 {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 450;
+        text-align: center;
+    }
+}
