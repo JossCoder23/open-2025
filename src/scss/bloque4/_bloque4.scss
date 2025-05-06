@@ -1,3 +1,6 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
 .bloque4 {
   height: auto;
   background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block3-background.webp);
@@ -11,6 +14,12 @@
   align-items: center;
   justify-content: center;
   padding: 7rem 0;
+  @include m.desktop_1020 {
+    padding: 10rem 0;
+    position: relative;
+    z-index: 99;
+    background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-desktop-block3-background.webp);
+  }
 }
 
 .bloque4Container {
@@ -20,13 +29,71 @@
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
+  @include m.desktop_1020 {
+    width: 50rem;
+    row-gap: 3rem;
+  }
+  @include m.desktop_1400 {
+    row-gap: 4rem;
+    width: 70rem;
+  }
+  button {
+    display: none;
+    @include m.desktop_1020 {
+      display: block;
+      width: 22rem;
+      height: 4.5rem;
+      border-radius: 2rem;
+      border: 2.5px solid black;
+      cursor: pointer;
+      transition: animation .5s ease;
+      animation: buttonCambioColor 4s infinite;
+    }
+    @include m.desktop_1200 {
+        width: 25rem;
+        height: 5.5rem;
+        border-radius: 2.5rem;
+    }
+    @include m.desktop_1700 {
+        width: 35rem;
+        height: 6rem;
+        border-radius: 3rem;
+    }
+    h5 {
+        color: black;
+        font-weight: 700;
+        margin: 0;
+        font-size: 1.8rem;
+        @include m.desktop_1200 {
+            font-size: 2rem;
+        }
+        @include m.desktop_1700 {
+            font-size: 2.5rem;
+        }
+    }
+}
 }
 
 .bloque4Title {
   display: flex;
   justify-self: center;
-  img {
+  .bloque4Title--mobile {
     width: 24rem;
+    max-width: none;
+    @include m.desktop_1020 {
+      display: none;
+    }
+  }
+  .bloque4Title--desktop {
+    display: none;
+    @include m.desktop_1020 {
+      display: block;
+      max-width: none;
+      width: 40rem;
+    }
+    @include m.desktop_1200 {
+      width: 50rem;
+    }
   }
 }
 
@@ -37,6 +104,12 @@
     font-size: 1.7rem;
     font-weight: 450;
     text-align: center;
+    @include m.desktop_1020 {
+      font-size: 2rem;
+    }
+    @include m.desktop_1400 {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -46,6 +119,16 @@
   flex-direction: column;
   row-gap: 3rem;
   align-items: center;
+  @include m.desktop_1020 {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  @include m.desktop_1400 {
+    justify-content: center;
+    column-gap: 7rem;
+    align-items: flex-start;
+  }
 }
 
 .bloque4GridItem {
@@ -54,10 +137,12 @@
   justify-content: center;
   align-items: center;
   row-gap: 1rem;
-  
   img {
     width: 6rem;
     height: auto;
+    @include m.desktop_1400 {
+      width: 8rem;
+    }
   }
   h3 {
     font-size: 1.5rem;
@@ -65,8 +150,20 @@
     margin: 0;
     text-align: center;
     color: black;
+    @include m.desktop_1020 {
+      font-size: 1.8rem;
+    }
+    @include m.desktop_1400 {
+      font-size: 2rem;
+    }
     span {
       font-size: 1.2rem;
+      @include m.desktop_1020 {
+        font-size: 1.4rem;
+      }
+      @include m.desktop_1400 {
+        font-size: 1.7rem;
+      }
     }
   }
 }

@@ -1,9 +1,16 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
 .bloque5 {
     background-color: white;
     height: auto;
     display: flex;
     justify-content: center;
     padding: 6rem 0;
+    @include m.desktop_1020 {
+        position: relative;
+        z-index: 999;
+    }
 }
 
 .bloque5Container {
@@ -11,13 +18,33 @@
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
+    @include m.desktop_1020 {
+        width: 60rem;
+    }
+    @include m.desktop_1400 {
+        width: 70rem;
+    }
 }
 
 .bloque5Title {
     display: flex;
     justify-content: center;
-    img {
+    .bloque5Title--mobile {
+        max-width: none;
         width: 24rem;
+        @include m.desktop_1020 {
+            display: none;
+        }
+    }
+    .bloque5Title--desktop {
+        display: none;
+        @include m.desktop_1020 {
+            display: block;
+            width: 40rem;
+        }
+        @include m.desktop_1400 {
+            width: 50rem;    
+        }
     }
 }
 
@@ -27,5 +54,11 @@
         font-size: 1.6rem;
         font-weight: 450;
         text-align: center;
+        @include m.desktop_1020 {
+            font-size: 2rem;
+        }
+        @include m.desktop_1400 {
+            font-size: 2.5rem;
+        }
     }
 }

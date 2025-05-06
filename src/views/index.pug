@@ -19,6 +19,9 @@ html(lang="es")
         //- link(rel="stylesheet", href="./css/swiper.css")
     body
         .bloque1
+            video#video-background(autoplay='' loop='' muted='' playsinline='')
+                source(src='https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/29-04-25/open-cayetano-desktop-top-background.mp4' type='video/mp4')
+                | Tu navegador no soporta videos.
             .bloque1Container
                 .bloque1Background
                     .bloque1BackgroundText
@@ -27,6 +30,7 @@ html(lang="es")
                         .bloque1BackgroundTextContent
                             img.bloque1BackgroundTextContentMobile(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/09-04-25/open-cayetano-background-mobile-imageTop.webp", alt="")
                             img.bloque1BackgroundTextContentDesktop(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/09-04-25/open-cayetano-background-desktop-imageTop.webp", alt="")
+                            img.bloque1FechaMobile(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/05-05-25/open-cayetano-fecha-mobile.webp")
                             .bloque1BackgroundTextContentGrid
                                 h3 Sábado 14 de junio
                                 h3.bloque1TextDesktop |
@@ -55,7 +59,7 @@ html(lang="es")
                         .bloque1FormDouble
                             input(type="text" class="requerido" id="Email" name="Email" maxlength="100" ftype="email" placeholder="Correo*" required)
                             select(type="text" class="requerido" id="LEADCF14" name="LEADCF14" required)
-                                option(value="" disabled="" selected="") ¿Grado?
+                                option(value="" disabled="" selected="") Elige tu grado
                                 option(value="5to de secundaria") 5to. de secundaria
                                 option(value="4to de secundaria") 4to. de secundaria
                                 option(value="3ro de secundaria") 3ro. de secundaria
@@ -112,9 +116,9 @@ html(lang="es")
                             //- .bloque1TopFormContainer--terminos
                             //-     input.asistencia(type="checkbox", name="")
                             //-     h3 Deseo asistir al evento virtual de este 24 de Noviembre.
-                        .bloque1TopFormContainer--terminos
+                        .bloque1TopFormContainer--terminos.terminos2
                             input(type="checkbox", name="")
-                            h3 Política de privacidad y términos de servicio.
+                            h3 Acepto la política de privacidad y términos de servicio
                         .captcha
                             #recap3503766000237491098.g-recaptcha(data-sitekey='6LdqkDoiAAAAALdLtgIzFUQelkS9jGZU4W7gjLHG' data-theme='light' data-callback='rccallback3503766000237491098' captcha-verified='false')
                             #recapErr3503766000237491098(style='font-size:12px;color:red;visibility:hidden;') Error en validación de Captcha. Si no es un robot, inténtelo de nuevo.
@@ -209,7 +213,8 @@ html(lang="es")
             //- img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block3-background.webp", alt="")
             .bloque4Container 
                 .bloque4Title
-                    img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block4-title.webp", alt="")
+                    img.bloque4Title--mobile(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block4-title.webp", alt="")
+                    img.bloque4Title--desktop(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-desktop-block4-title.webp", alt="")
                 .bloque4Subtitle
                     h4 Pasa una tarde diferente junto a tus papás o tus besties mientras conoces más sobre Cayetano y la carrera que te interesa.
                 .bloque4Grid
@@ -223,18 +228,21 @@ html(lang="es")
                     .bloque4GridItem
                         img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-icon1.webp", alt="")
                         h3 desde la 1:00 p. m.
+                button
+                    h5 ¡Regístrate ahora!
         .bloque5
             .bloque5Container
                 .bloque5Title
-                    img(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block5-title.webp", alt="")
+                    img.bloque5Title--mobile(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-mobile-block5-title.webp", alt="")
+                    img.bloque5Title--desktop(src="https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/22-04-25/open-cayetano-desktop-block5-title.webp", alt="")
                 .bloque5Subtitle
                     h3 Cayetano es mucho más de lo que imaginas ¿Pensabas que solo era salud? También es 
                         strong gestión, ingeniería, ciencias y educación.  
         .bloque6
-            .card
-                .card-front
+            .card.card1
+                .card-front.card-front1
                     button(onclick="flipCard()") + Ver carreras
-                .card-back
+                .card-back.card-back1
                     h3 Administración
                     h3 Administración en Salud
                     button(onclick="flipCard()") Regresar
@@ -277,20 +285,22 @@ html(lang="es")
                     h3 Educación
                     button(onclick="flipCard5()") Regresar
             script.
-                function flipCard() {
-                    document.querySelector(".card").classList.toggle("flipped");
-                }
-                function flipCard2() {
-                    document.querySelector(".card2").classList.toggle("flipped");
-                }
-                function flipCard3() {
-                    document.querySelector(".card3").classList.toggle("flipped");
-                }
-                function flipCard4() {
-                    document.querySelector(".card4").classList.toggle("flipped");
-                }
-                function flipCard5() {
-                    document.querySelector(".card5").classList.toggle("flipped");
+                if (window.innerWidth <= 1020) { 
+                    function flipCard() {
+                        document.querySelector(".card").classList.toggle("flipped");
+                    }
+                    function flipCard2() {
+                        document.querySelector(".card2").classList.toggle("flipped");
+                    }
+                    function flipCard3() {
+                        document.querySelector(".card3").classList.toggle("flipped");
+                    }
+                    function flipCard4() {
+                        document.querySelector(".card4").classList.toggle("flipped");
+                    }
+                    function flipCard5() {
+                        document.querySelector(".card5").classList.toggle("flipped");
+                    }
                 }
         footer
             .footerContainer

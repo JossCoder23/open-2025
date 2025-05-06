@@ -10,6 +10,10 @@ footer {
         display: flex;
         justify-content: center;
     }
+    @include m.desktop_1020 {
+        position: relative;
+        z-index: 99;
+    }
     @include m.desktop_1200 {
         padding: 4.5rem 0;
     }

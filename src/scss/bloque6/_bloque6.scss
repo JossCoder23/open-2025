@@ -4,6 +4,9 @@
 .bloque6 {
     perspective: 1000px;
     background-color: rgba(0,0,0, .6);
+    @include m.desktop_1020 {
+        display: flex;
+    }
 }
 
 .card {
@@ -12,11 +15,43 @@
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
+    will-change: transform;
     @include m.phone_360 {
         height: 50rem;
     }
     @include m.phone_390 {
         height: 52rem;
+    }
+    @include m.desktop_1020 {
+        transition: transform 0.8s ease-in-out;
+        height: 28rem;
+        &:hover {
+            transform: rotateY(180deg);
+        }
+    }
+    @include m.desktop_1200 {
+        height: 32rem;
+    }
+    @include m.desktop_1300 {
+        height: 35rem;
+    }
+    @include m.desktop_1400 {
+        height: 38rem;
+    }
+    @include m.desktop_1500 {
+        height: 40rem;
+    }
+    @include m.desktop_1600 {
+        height: 43rem;
+    }
+    @include m.desktop_1700 {
+        height: 46rem;
+    }
+    @include m.desktop_1800 {
+        height: 48rem;
+    }
+    @include m.desktop_1900 {
+        height: 51rem;
     }
   }
 
@@ -30,6 +65,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     button {
         width: 16rem;
         height: 3.5rem;
@@ -42,6 +78,9 @@
         border-radius: 2rem;
         font-weight: 600;
         color: black;
+        @include m.desktop_1020 {
+            display: none;
+        }
     }
   }
 
@@ -104,9 +143,33 @@
 .card-back4 {
     background-image: url(https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/23-04-25/open-cayetano-block6-back-image4.webp);
     row-gap: .5rem;
+    @include m.desktop_1020 {
+        row-gap: .3rem;
+    }
+    @include m.desktop_1400 {
+        row-gap: .7rem;
+    }
     h3 {
         width: 27rem;
         font-size: 1.7rem;
+        @include m.desktop_1020 {
+            width: 18rem;
+            font-size: 1.2rem;
+        }
+        @include m.desktop_1200 {
+            width: 20rem;
+            font-size: 1.3rem;
+        }
+        @include m.desktop_1500 {
+            font-size: 1.5rem;
+        }
+        @include m.desktop_1600 {
+            font-size: 1.7rem;
+        }
+        @include m.desktop_1900 {
+            font-size: 2rem;
+            width: 22rem;
+        }
     }
 }
 

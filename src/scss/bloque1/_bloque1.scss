@@ -20,7 +20,8 @@
     }
     @include m.desktop_1020 {
         &::before {
-            background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/09-04-25/open-cayetano-background-desktop.webp');
+            // background-image: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/09-04-25/open-cayetano-background-desktop.webp');
+            background-image: none;
         }
         display: flex;
         justify-content: center;
@@ -64,9 +65,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 0;
+    // padding: 2rem 0;
     height: auto;
     row-gap: 1rem;
+    padding-top: 2rem;
     @include m.phone_360 {
         row-gap: 3rem;
     }
@@ -121,7 +123,7 @@
         
         width: 13rem;
         height: auto;
-        filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(12%) hue-rotate(122deg) brightness(104%) contrast(99%);
+        // filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(12%) hue-rotate(122deg) brightness(104%) contrast(99%);
         @include m.phone_360 {
             width: 15rem;
         }
@@ -153,6 +155,9 @@
         justify-content: center;
         align-items: center;
         // height: 75%;
+        @include m.desktop_1020 {
+            position: relative;
+        }
         @include m.desktop_1200 {
             row-gap: 1rem;
         }
@@ -171,7 +176,7 @@
             @include m.desktop_1020 {
                 display: block;
                 width: 26rem;
-                height: auto;
+                height: 100%;
             }
             @include m.desktop_1200 {
                 width: 100%;
@@ -183,14 +188,25 @@
                 width: 100%;    
             }
         }
+        .bloque1FechaMobile {
+            width: 25rem;
+            @include m.phone_400 {
+                width: 28rem;
+            }
+            @include m.desktop_1020 {
+                display: none;
+            }
+        }
         .bloque1BackgroundTextContentGrid {
-            display: flex;
+            display: none;
+            // display: flex;
             flex-direction: column;
             text-align: center;
             row-gap: .5rem;
             background-color: black;
             width: 26rem;
             @include m.desktop_1020 {
+                display: flex;
                 flex-direction: row;
                 justify-content: center;
                 column-gap: 2rem;
@@ -604,6 +620,9 @@ to {
 
 #checkAcompanante {
     width: 1rem;
+    @include m.desktop_1020 {
+        width: 1.3rem;
+    }
 }
 
 .divColegio {
@@ -627,4 +646,27 @@ to {
     padding: 5px 3px;
     background-color: white;
     cursor: pointer;
+}
+
+.terminos2 {
+    padding-top: .5rem;
+    border-top: 1px solid black;
+    @include m.desktop_1020 {
+        padding-top: 1rem;
+    }
+}
+
+#video-background {
+    display: none;
+    @include m.desktop_1020 {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 101vh;
+        // object-fit: cover;
+        object-fit: fill;
+        transform: translate(-50%, -50%);
+    }
 }
